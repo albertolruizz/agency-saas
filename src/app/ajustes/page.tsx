@@ -1,5 +1,5 @@
-import { HelloWorld } from "@/components/HelloWorld";
+import { ModulePlaceholder } from "@/components/ModulePlaceholder";
 
 export default function AjustesPage() {
-  return <HelloWorld title="Ajustes" />;
+  return <ModulePlaceholder href="/ajustes" />;
 }

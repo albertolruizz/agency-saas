@@ -1,5 +1,5 @@
-import { HelloWorld } from "@/components/HelloWorld";
+import { ModulePlaceholder } from "@/components/ModulePlaceholder";
 
 export default function CrmPage() {
-  return <HelloWorld title="CRM outreach" />;
+  return <ModulePlaceholder href="/crm" />;
 }

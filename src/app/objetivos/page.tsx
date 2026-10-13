@@ -1,5 +1,5 @@
-import { HelloWorld } from "@/components/HelloWorld";
+import { ModulePlaceholder } from "@/components/ModulePlaceholder";
 
 export default function ObjetivosPage() {
-  return <HelloWorld title="Objetivos y hábitos" />;
+  return <ModulePlaceholder href="/objetivos" />;
 }

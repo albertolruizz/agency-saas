@@ -1,5 +1,5 @@
-import { HelloWorld } from "@/components/HelloWorld";
+import { ModulePlaceholder } from "@/components/ModulePlaceholder";
 
 export default function FinanzasPage() {
-  return <HelloWorld title="Ingresos y gastos" />;
+  return <ModulePlaceholder href="/finanzas" />;
 }

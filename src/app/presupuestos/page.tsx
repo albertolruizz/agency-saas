@@ -1,5 +1,5 @@
-import { HelloWorld } from "@/components/HelloWorld";
+import { ModulePlaceholder } from "@/components/ModulePlaceholder";
 
 export default function PresupuestosPage() {
-  return <HelloWorld title="Presupuestos" />;
+  return <ModulePlaceholder href="/presupuestos" />;
 }

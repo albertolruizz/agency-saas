@@ -1,5 +1,5 @@
-import { HelloWorld } from "@/components/HelloWorld";
+import { ModulePlaceholder } from "@/components/ModulePlaceholder";
 
 export default function FacturasPage() {
-  return <HelloWorld title="Facturas" />;
+  return <ModulePlaceholder href="/facturas" />;
 }

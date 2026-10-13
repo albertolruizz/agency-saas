@@ -1,5 +1,5 @@
-import { HelloWorld } from "@/components/HelloWorld";
+import { ModulePlaceholder } from "@/components/ModulePlaceholder";
 
 export default function CalendarioPage() {
-  return <HelloWorld title="Calendario" />;
+  return <ModulePlaceholder href="/calendario" />;
 }

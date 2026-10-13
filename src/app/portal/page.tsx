@@ -1,5 +1,5 @@
-import { HelloWorld } from "@/components/HelloWorld";
+import { ModulePlaceholder } from "@/components/ModulePlaceholder";
 
 export default function PortalPage() {
-  return <HelloWorld title="Portal de clientes" />;
+  return <ModulePlaceholder href="/portal" />;
 }
