@@ -30,20 +30,21 @@ const buttonVariants = {
   ghost: "text-muted hover:bg-black/[0.04] hover:text-foreground dark:hover:bg-white/[0.05]",
 };
 
+export function buttonStyles(variant: keyof typeof buttonVariants = "secondary", className?: string) {
+  return cx(
+    "inline-flex h-8 items-center gap-1.5 rounded-lg px-3 text-sm font-medium transition disabled:opacity-60",
+    buttonVariants[variant],
+    className,
+  );
+}
+
 export function Button({
   variant = "secondary",
   className,
   ...props
 }: ComponentProps<"button"> & { variant?: keyof typeof buttonVariants }) {
   return (
-    <button
-      className={cx(
-        "inline-flex h-8 items-center gap-1.5 rounded-lg px-3 text-sm font-medium transition",
-        buttonVariants[variant],
-        className,
-      )}
-      {...props}
-    />
+    <button className={buttonStyles(variant, className)} {...props} />
   );
 }
 

@@ -57,5 +57,6 @@ Postgres 17 propio en la VPS de iUROP (contenedor `agency-saas-postgres`, solo a
 
 1. Abre el túnel: `./ops/db-tunnel.sh` (lee las credenciales SSH de `IUROP DEVELOPMENT/.env.vps.local`, o de la ruta en `IUROP_VPS_ENV_FILE`).
 2. Copia `.env.example` a `.env.local` y pon la contraseña de `agency_saas_app`.
+3. Aplica las migraciones: `npm run db:migrate` (esquema en `src/db/schema.ts`; tras cambiarlo, `npm run db:generate`).
 
 Copia diaria con `pg_dump` en `/opt/agency-saas-db/backups` (7 días).
