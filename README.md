@@ -26,6 +26,27 @@ La app todo-en-uno para dueños de agencias: desde el founder en solitario que f
 - https://www.superfocus.me/ (SaaS actual de iurop)
 - https://www.flozy.com/ (plataforma todo-en-uno para agencias; incluye portal de clientes)
 
-## Estado
+## Arrancar en local
 
-Repositorio inicial. Stack y roadmap por definir.
+Requisitos: Node 20+.
+
+```bash
+npm install
+npm run dev
+```
+
+Abre http://localhost:3000. Cada pestaña de la sidebar es una ruta en `src/app/<ruta>/page.tsx`; la sidebar se define en `src/lib/nav.ts`.
+
+## Stack
+
+Next.js 15 (App Router) + TypeScript + Tailwind CSS 4.
+
+## Planteamiento de desarrollo
+
+1. **Esqueleto (este MVP):** layout con sidebar y una ruta por módulo.
+2. **Base:** auth + multi-workspace (agencia) + modelo de datos de Clientes (Postgres/Supabase + Drizzle o Prisma). Todo cuelga de *cliente*.
+3. **Núcleo operativo:** Boards y Mis tareas, Calendario.
+4. **Dinero:** Presupuestos → Facturas (Stripe para cobros), Ingresos y gastos.
+5. **Captación:** CRM outreach y Links de agendado.
+6. **Cliente final:** Portal de clientes (proyectos, entregables, facturas, mensajes).
+7. **Founder:** Inicio (panel del día), Objetivos y hábitos.
