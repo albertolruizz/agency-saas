@@ -1,5 +1,5 @@
-import { HelloWorld } from "@/components/HelloWorld";
+import { ModulePlaceholder } from "@/components/ModulePlaceholder";
 
 export default function AgendadoPage() {
-  return <HelloWorld title="Links de agendado" />;
+  return <ModulePlaceholder href="/agendado" />;
 }

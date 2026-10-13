@@ -1,5 +1,5 @@
-import { HelloWorld } from "@/components/HelloWorld";
+import { ModulePlaceholder } from "@/components/ModulePlaceholder";
 
 export default function ClientesPage() {
-  return <HelloWorld title="Clientes" />;
+  return <ModulePlaceholder href="/clientes" />;
 }

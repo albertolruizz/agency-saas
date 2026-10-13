@@ -1,5 +1,5 @@
-import { HelloWorld } from "@/components/HelloWorld";
+import { ModulePlaceholder } from "@/components/ModulePlaceholder";
 
 export default function TareasPage() {
-  return <HelloWorld title="Mis tareas" />;
+  return <ModulePlaceholder href="/tareas" />;
 }
