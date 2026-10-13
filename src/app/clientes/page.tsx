@@ -60,7 +60,7 @@ export default async function ClientesPage({
             className="h-8 w-72 rounded-lg border border-border bg-surface pr-3 pl-8 text-sm shadow-card outline-none placeholder:text-subtle focus:border-accent"
           />
         </form>
-        <div className="flex gap-1 rounded-lg bg-black/[0.04] p-0.5 text-sm dark:bg-white/[0.05]">
+        <div className="flex gap-1 rounded-lg bg-hover p-0.5 text-sm">
           {[{ value: undefined, label: "Todos" }, ...CLIENT_STATUSES].map((s) => {
             const active = s.value === status;
             return (

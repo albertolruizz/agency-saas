@@ -19,10 +19,13 @@
   --warning-soft: #f8eedb;
   --danger: #c2453d;
   --danger-soft: #f8e2df;
+  --on-accent: #ffffff;
+  --hover: rgb(0 0 0 / 0.04);
+  --card-shadow: 0 1px 2px rgb(31 29 26 / 0.04), 0 1px 1px rgb(31 29 26 / 0.03);
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-brand]) {
     --background: #141311;
     --sidebar: #191816;
     --surface: #1e1d1a;
@@ -39,6 +42,7 @@
     --warning-soft: #3a2d17;
     --danger: #ea7b72;
     --danger-soft: #3d1f1c;
+    --hover: rgb(255 255 255 / 0.05);
   }
 }
 
@@ -59,12 +63,181 @@
   --color-warning-soft: var(--warning-soft);
   --color-danger: var(--danger);
   --color-danger-soft: var(--danger-soft);
-  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
-  --font-serif: var(--font-instrument-serif), ui-serif, Georgia, serif;
-  --shadow-card: 0 1px 2px rgb(31 29 26 / 0.04), 0 1px 1px rgb(31 29 26 / 0.03);
+  --color-on-accent: var(--on-accent);
+  --color-hover: var(--hover);
+  --font-sans: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-display, var(--font-body)), ui-serif, Georgia, serif;
+  --shadow-card: var(--card-shadow);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
+}
+
+/* ------------------------------------------------------------------
+   Variaciones de marca (NEXT_PUBLIC_BRAND). Cada una fija su propio
+   esquema de color, radios, sombras y estilo de titulares.
+   ------------------------------------------------------------------ */
+
+/* v1 · Nexo: suizo y preciso. Blanco, azul eléctrico, sidebar negra, esquinas casi rectas. */
+:root[data-brand="nexo"] {
+  color-scheme: light;
+  --background: #f4f5f7;
+  --sidebar: #0d0e11;
+  --surface: #ffffff;
+  --surface-muted: #f7f8fa;
+  --border: #e3e5ea;
+  --foreground: #0d0e11;
+  --muted: #5f6673;
+  --subtle: #9aa0ab;
+  --accent: #2f5bff;
+  --accent-soft: #e7edff;
+  --on-accent: #ffffff;
+  --hover: rgb(13 14 17 / 0.05);
+  --card-shadow: none;
+  --radius-md: 4px;
+  --radius-lg: 6px;
+  --radius-xl: 8px;
+  --radius-2xl: 10px;
+}
+[data-brand="nexo"] aside {
+  --surface: #17191e;
+  --surface-muted: #1d2026;
+  --border: #262a31;
+  --foreground: #f3f4f6;
+  --muted: #9aa0ab;
+  --subtle: #646a75;
+  --hover: rgb(255 255 255 / 0.06);
+  color: var(--foreground);
+}
+[data-brand="nexo"] .font-serif {
+  font-weight: 500;
+  letter-spacing: -0.035em;
+}
+
+/* v2 · Faro: oscuro y técnico. Tinta azul noche con acento lima. */
+:root[data-brand="faro"] {
+  color-scheme: dark;
+  --background: #0a0b0f;
+  --sidebar: #0e1016;
+  --surface: #13151c;
+  --surface-muted: #1a1d26;
+  --border: #252937;
+  --foreground: #eef0f6;
+  --muted: #8b91a3;
+  --subtle: #5d6375;
+  --accent: #c6f45e;
+  --accent-soft: rgb(198 244 94 / 0.12);
+  --on-accent: #0a0b0f;
+  --success: #5fd68e;
+  --success-soft: rgb(95 214 142 / 0.12);
+  --warning: #f2b64f;
+  --warning-soft: rgb(242 182 79 / 0.12);
+  --danger: #ff7a70;
+  --danger-soft: rgb(255 122 112 / 0.12);
+  --hover: rgb(255 255 255 / 0.05);
+  --card-shadow: inset 0 1px 0 rgb(255 255 255 / 0.03), 0 10px 30px -12px rgb(0 0 0 / 0.6);
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-xl: 12px;
+  --radius-2xl: 14px;
+}
+[data-brand="faro"] .font-serif {
+  font-weight: 600;
+  letter-spacing: -0.04em;
+}
+[data-brand="faro"] body {
+  background:
+    radial-gradient(900px 420px at 85% -10%, rgb(198 244 94 / 0.07), transparent 70%),
+    var(--background);
+}
+
+/* v3 · Tinta: editorial brutalista. Papel crema, líneas negras, sombras duras, rojo tinta. */
+:root[data-brand="tinta"] {
+  color-scheme: light;
+  --background: #f2ede2;
+  --sidebar: #e9e2d2;
+  --surface: #fffdf7;
+  --surface-muted: #f7f2e7;
+  --border: #16130f;
+  --foreground: #16130f;
+  --muted: #5b5449;
+  --subtle: #8c8476;
+  --accent: #e0392b;
+  --accent-soft: #fbe0d9;
+  --on-accent: #fffdf7;
+  --hover: rgb(22 19 15 / 0.06);
+  --card-shadow: 4px 4px 0 #16130f;
+  --radius-md: 0;
+  --radius-lg: 0;
+  --radius-xl: 0;
+  --radius-2xl: 0;
+}
+[data-brand="tinta"] .font-serif {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+[data-brand="tinta"] .brand-wordmark {
+  font-style: italic;
+}
+
+/* v4 · Órbita: amable y redondeado. Lavanda, violeta y sombras flotantes. */
+:root[data-brand="orbita"] {
+  color-scheme: light;
+  --background: #f6f4ff;
+  --sidebar: #efebff;
+  --surface: #ffffff;
+  --surface-muted: #faf8ff;
+  --border: #e5e0fa;
+  --foreground: #1c1537;
+  --muted: #6c6690;
+  --subtle: #a39ebf;
+  --accent: #6c47ff;
+  --accent-soft: #ece6ff;
+  --on-accent: #ffffff;
+  --hover: rgb(108 71 255 / 0.07);
+  --card-shadow: 0 1px 2px rgb(60 40 160 / 0.05), 0 12px 28px -14px rgb(60 40 160 / 0.22);
+  --radius-md: 10px;
+  --radius-lg: 12px;
+  --radius-xl: 18px;
+  --radius-2xl: 24px;
+}
+[data-brand="orbita"] .font-serif {
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+[data-brand="orbita"] body {
+  background:
+    radial-gradient(800px 500px at 100% 0%, rgb(255 190 225 / 0.35), transparent 70%),
+    radial-gradient(700px 500px at 30% -10%, rgb(160 140 255 / 0.25), transparent 70%),
+    var(--background);
+}
+
+/* v5 · Brote: calmado y natural. Salvia, verde bosque y serif clásica. */
+:root[data-brand="brote"] {
+  color-scheme: light;
+  --background: #f0f2ec;
+  --sidebar: #e6eae0;
+  --surface: #fbfcf8;
+  --surface-muted: #f3f5ef;
+  --border: #d9dfd1;
+  --foreground: #1a2a21;
+  --muted: #5e6e64;
+  --subtle: #93a097;
+  --accent: #2e6a4e;
+  --accent-soft: #dbeae1;
+  --on-accent: #fbfcf8;
+  --success: #2e6a4e;
+  --success-soft: #dbeae1;
+  --warning: #a8741c;
+  --warning-soft: #f3e8cf;
+  --danger: #b5483c;
+  --danger-soft: #f4dfdb;
+  --hover: rgb(26 42 33 / 0.05);
+  --card-shadow: 0 1px 2px rgb(26 42 33 / 0.05);
+  --radius-md: 8px;
+  --radius-lg: 10px;
+  --radius-xl: 14px;
+  --radius-2xl: 18px;
 }

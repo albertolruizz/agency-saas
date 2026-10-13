@@ -4,6 +4,7 @@ import { usePathname } from "next/navigation";
 import { Bell, Play } from "lucide-react";
 import { findNav } from "@/lib/nav";
 import { Button } from "@/components/ui";
+import { brand } from "@/lib/brand";
 
 export function Topbar() {
   const pathname = usePathname();
@@ -20,14 +21,14 @@ export function Topbar() {
       <div className="flex min-w-0 flex-1 items-center gap-2 text-sm">
         {current && <span className="text-subtle">{current.group.title}</span>}
         {current && <span className="text-subtle">/</span>}
-        <span className="truncate font-medium">{current?.item.label ?? "Agency SaaS"}</span>
+        <span className="truncate font-medium">{current?.item.label ?? brand.name}</span>
       </div>
       <span className="hidden text-sm text-muted md:inline" suppressHydrationWarning>
         {todayLabel}
       </span>
       <button
         aria-label="Notificaciones"
-        className="flex size-8 items-center justify-center rounded-lg text-muted hover:bg-black/[0.04] hover:text-foreground dark:hover:bg-white/[0.05]"
+        className="flex size-8 items-center justify-center rounded-lg text-muted hover:bg-hover hover:text-foreground"
       >
         <Bell className="size-4" />
       </button>

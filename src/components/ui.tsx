@@ -27,7 +27,7 @@ export function CardHeader({ title, action }: { title: string; action?: ReactNod
 const buttonVariants = {
   primary: "bg-foreground text-background hover:opacity-90",
   secondary: "border border-border bg-surface text-foreground shadow-card hover:bg-surface-muted",
-  ghost: "text-muted hover:bg-black/[0.04] hover:text-foreground dark:hover:bg-white/[0.05]",
+  ghost: "text-muted hover:bg-hover hover:text-foreground",
 };
 
 export function buttonStyles(variant: keyof typeof buttonVariants = "secondary", className?: string) {

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ChevronsUpDown, Search, Timer } from "lucide-react";
 import { NAV } from "@/lib/nav";
+import { BrandLogo } from "@/components/BrandLogo";
 
 export function Sidebar() {
   const pathname = usePathname();
@@ -11,8 +12,9 @@ export function Sidebar() {
   return (
     <aside className="flex h-screen w-64 shrink-0 flex-col border-r border-border bg-sidebar">
       <div className="px-3 pt-3">
-        <button className="flex w-full items-center gap-2.5 rounded-lg px-2 py-1.5 text-left hover:bg-black/[0.04] dark:hover:bg-white/[0.05]">
-          <span className="flex size-7 items-center justify-center rounded-md bg-accent font-serif text-lg leading-none text-white">
+        <BrandLogo />
+        <button className="flex w-full items-center gap-2.5 rounded-lg px-2 py-1.5 text-left hover:bg-hover">
+          <span className="flex size-7 items-center justify-center rounded-md bg-accent font-serif text-lg leading-none text-on-accent">
             a
           </span>
           <span className="min-w-0 flex-1">
@@ -46,7 +48,7 @@ export function Sidebar() {
                     className={`flex items-center gap-2.5 rounded-lg px-2 py-1.5 text-sm transition-colors ${
                       active
                         ? "bg-surface font-medium text-foreground shadow-card ring-1 ring-border"
-                        : "text-muted hover:bg-black/[0.04] hover:text-foreground dark:hover:bg-white/[0.05]"
+                        : "text-muted hover:bg-hover hover:text-foreground"
                     }`}
                   >
                     <Icon className={`size-4 ${active ? "text-accent" : ""}`} strokeWidth={1.75} />
