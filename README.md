@@ -50,3 +50,12 @@ Next.js 15 (App Router) + TypeScript + Tailwind CSS 4.
 5. **Captación:** CRM outreach y Links de agendado.
 6. **Cliente final:** Portal de clientes (proyectos, entregables, facturas, mensajes).
 7. **Founder:** Inicio (panel del día), Objetivos y hábitos.
+
+## Base de datos
+
+Postgres 17 propio en la VPS de iUROP (contenedor `agency-saas-postgres`, solo accesible desde la propia VPS). Desde local:
+
+1. Abre el túnel: `./ops/db-tunnel.sh` (lee las credenciales SSH de `IUROP DEVELOPMENT/.env.vps.local`, o de la ruta en `IUROP_VPS_ENV_FILE`).
+2. Copia `.env.example` a `.env.local` y pon la contraseña de `agency_saas_app`.
+
+Copia diaria con `pg_dump` en `/opt/agency-saas-db/backups` (7 días).
